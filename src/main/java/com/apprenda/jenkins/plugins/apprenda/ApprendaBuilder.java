@@ -12,14 +12,14 @@ import java.util.Map;
 
 import javax.json.JsonArray;
 import javax.json.JsonObject;
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletException;
 
 import org.jenkinsci.remoting.RoleChecker;
 import org.jfree.util.Log;
 import org.kohsuke.stapler.AncestorInPath;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.QueryParameter;
-import org.kohsuke.stapler.StaplerRequest;
+import org.kohsuke.stapler.StaplerRequest2;
 
 import com.cloudbees.plugins.credentials.CredentialsMatchers;
 import com.cloudbees.plugins.credentials.CredentialsProvider;
@@ -445,7 +445,7 @@ public class ApprendaBuilder extends Builder implements SimpleBuildStep, Seriali
 		//}
 
 		@Override
-		public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
+		public boolean configure(StaplerRequest2 req, JSONObject formData) throws FormException {
 			//bypassSSL = formData.getBoolean("bypassSSL");
 			save();
 			return super.configure(req, formData);
